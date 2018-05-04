@@ -4,6 +4,7 @@ import Table from './table';
 
 class Play extends Component {
     render() {
+        console.log(this.props);
         return (
             <div>
                 <Link to="/">Home</Link><br />
