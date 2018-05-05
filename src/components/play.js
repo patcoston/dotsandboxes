@@ -8,7 +8,6 @@ class Play extends Component {
         return (
             <div>
                 <Link to="/">Home</Link><br />
-                <Link to="/Setup">Setup</Link><br />
                 <Table rows={this.props.size.tableRows} cols={this.props.size.tableCols} />
             </div>
         )
