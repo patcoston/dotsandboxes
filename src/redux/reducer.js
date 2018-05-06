@@ -2,22 +2,27 @@ import game from '../data/game';
 import {combineReducers} from 'redux';
 
 function player(state=game.player, action) {
+    console.log('reducer player', state, action);
     switch (action.type) {
-        case 'ADD_USER':
+        case 'SET_PLAYER':
+            state[action.index] = action.player;
             return state;
-        case 'REMOVE_USER':
+        case 'ADD_PLAYER':
+            return state;
+        case 'REMOVE_PLAYER':
             return state;
     }
     return state;
 }
 
 function size(state=game.size, action) {
+    console.log('reducer size', state, action);
     switch (action.type) {
         case 'UPDATE_BOARD_SIZE':
-            state.boardSize.rows = action.rows;
-            state.boardSize.cols = action.cols;
-            state.tableSize.rows = action.rows * 2 + 1;
-            state.tableSize.cols = action.cols * 2 + 1;
+            state.boardRows = action.rows;
+            state.boardCols = action.cols;
+            state.tableRows = action.rows * 2 + 1;
+            state.tableCols = action.cols * 2 + 1;
             return state;
     }
     return state;

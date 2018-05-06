@@ -1,14 +1,23 @@
-export function addUser(user) {
+export function setPlayer(player, index) {
+    console.log('function setPlayer', player, index);
     return {
-        type: 'ADD_USER',
-        user,
+        type: 'SET_PLAYER',
+        player,
+        index,
     }
 }
 
-export function removeUser(user) {
+export function addPlayer(player) {
     return {
-        type: 'REMOVE_USER',
-        user,
+        type: 'ADD_PLAYER',
+        player,
+    }
+}
+
+export function removePlayer(player) {
+    return {
+        type: 'REMOVE_PLAYER',
+        player,
     }
 }
 
@@ -20,6 +29,7 @@ export function addLine(loc) {
 }
 
 export function updateBoardSize(rows, cols) {
+    console.log('updateBoardSize', rows, cols);
     return {
         type: 'UPDATE_BOARD_SIZE',
         rows,

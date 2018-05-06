@@ -1,5 +1,5 @@
 const game = {
-    player: ['player1', 'player2'],
+    player: ['A', 'B'],
     size: {
         boardRows: 3,
         boardCols: 3,
