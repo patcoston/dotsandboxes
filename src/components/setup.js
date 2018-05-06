@@ -6,12 +6,12 @@ class Setup extends Component {
         return (
             <div>
                 <button onClick={() => {
-                    let rows = 10;
-                    let cols = 10;
-                    let player1 = 'X';
-                    let player2 = 'Y';
+                    let rows = parseInt(document.getElementById('rows').value);
+                    let cols = parseInt(document.getElementById('cols').value);
+                    let player1 = document.getElementById('player1').value;
+                    let player2 = document.getElementById('player2').value;
                     this.props.updateBoardSize(rows, cols);
-                    this.props.setPlayers([player1, player2]);
+                    this.props.setPlayers({names:[player1, player2]});
                     this.props.history.push('/');
                 }}>Home</button>
                 <div>

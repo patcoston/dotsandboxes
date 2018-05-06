@@ -7,9 +7,6 @@ class Play extends Component {
         return (
             <div>
                 <button onClick={() => {
-                    let rows = 10;
-                    let cols = 10;
-                    this.props.updateBoardSize(rows, cols);
                     this.props.history.push('/');
                 }}>Home</button><br />
                 <label>Scores:</label>
