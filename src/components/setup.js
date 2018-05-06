@@ -11,8 +11,7 @@ class Setup extends Component {
                     let player1 = 'X';
                     let player2 = 'Y';
                     this.props.updateBoardSize(rows, cols);
-                    this.props.setPlayer(player1, 0);
-                    this.props.setPlayer(player2, 1);
+                    this.props.setPlayers([player1, player2]);
                     this.props.history.push('/');
                 }}>Home</button>
                 <div>
@@ -26,11 +25,13 @@ class Setup extends Component {
                         <option>F</option>
                         <option>G</option>
                         <option>H</option>
+                        <option>I</option>
                         <option>J</option>
                         <option>K</option>
                         <option>L</option>
                         <option>M</option>
                         <option>N</option>
+                        <option>O</option>
                         <option>P</option>
                         <option>Q</option>
                         <option>R</option>
@@ -55,11 +56,13 @@ class Setup extends Component {
                         <option>F</option>
                         <option>G</option>
                         <option>H</option>
+                        <option>I</option>
                         <option>J</option>
                         <option>K</option>
                         <option>L</option>
                         <option>M</option>
                         <option>N</option>
+                        <option>O</option>
                         <option>P</option>
                         <option>Q</option>
                         <option>R</option>

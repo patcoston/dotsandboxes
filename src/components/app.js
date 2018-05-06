@@ -10,9 +10,8 @@ import {withRouter} from 'react-router';
 function mapStateToProps(state) {
     console.log(state);
     return {
-        player: [...state.player],
-        size: {...state.size},
-        board: [...state.board],
+        players: {...state.players},
+        board: {...state.board},
     }
 }
 

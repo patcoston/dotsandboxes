@@ -1,9 +1,8 @@
-export function setPlayer(player, index) {
-    console.log('function setPlayer', player, index);
+export function setPlayers(players) {
+    console.log('function setPlayers', players);
     return {
-        type: 'SET_PLAYER',
-        player,
-        index,
+        type: 'SET_PLAYERS',
+        players,
     }
 }
 
