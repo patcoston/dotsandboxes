@@ -5,7 +5,16 @@ class Setup extends Component {
     render() {
         return (
             <div>
-                <Link to="/">Home</Link>
+                <button onClick={() => {
+                    let rows = 10;
+                    let cols = 10;
+                    let player1 = 'X';
+                    let player2 = 'Y';
+                    this.props.updateBoardSize(rows, cols);
+                    this.props.setPlayer(player1, 0);
+                    this.props.setPlayer(player2, 1);
+                    this.props.history.push('/');
+                }}>Home</button>
                 <div>
                     <label>Player 1 Letter</label>
                     <select id="player1">

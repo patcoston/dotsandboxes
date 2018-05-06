@@ -4,10 +4,14 @@ import Table from './table';
 
 class Play extends Component {
     render() {
-        console.log(this.props);
         return (
             <div>
-                <Link to="/">Home</Link><br />
+                <button onClick={() => {
+                    let rows = 10;
+                    let cols = 10;
+                    this.props.updateBoardSize(rows, cols);
+                    this.props.history.push('/');
+                }}>Home</button>
                 <Table rows={this.props.size.tableRows} cols={this.props.size.tableCols} />
             </div>
         )
