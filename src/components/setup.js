@@ -1,8 +1,25 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+class Option extends Component {
+    render() {
+        let opt = this.props.options;
+        let opts = [];
+        for (let i=0; i<opt.length; i++) {
+            if (opt[i] == this.props.selected) {
+                opts.push(<option selected>{opt[i]}</option>);
+            } else {
+                opts.push(<option>{opt[i]}</option>);
+            }
+        }
+        return opts;
+    }
+}
+
 class Setup extends Component {
     render() {
+        let letters = 'ABCDEFGHIJKLMOPQRSTUVWXYZ'.split('');
+        let numbers = '23456789'.split('');
         return (
             <div>
                 <button onClick={() => {
@@ -17,89 +34,25 @@ class Setup extends Component {
                 <div>
                     <label>Player 1 Letter</label>
                     <select id="player1">
-                        <option selected>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                        <option>E</option>
-                        <option>F</option>
-                        <option>G</option>
-                        <option>H</option>
-                        <option>I</option>
-                        <option>J</option>
-                        <option>K</option>
-                        <option>L</option>
-                        <option>M</option>
-                        <option>N</option>
-                        <option>O</option>
-                        <option>P</option>
-                        <option>Q</option>
-                        <option>R</option>
-                        <option>S</option>
-                        <option>T</option>
-                        <option>U</option>
-                        <option>V</option>
-                        <option>W</option>
-                        <option>X</option>
-                        <option>Y</option>
-                        <option>Z</option>
+                        <Option options={letters} selected={this.props.players.names[0]} />
                     </select>
                 </div>
                 <div>
                     <label>Player 2 Letter</label>
                     <select id="player2">
-                        <option>A</option>
-                        <option selected>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                        <option>E</option>
-                        <option>F</option>
-                        <option>G</option>
-                        <option>H</option>
-                        <option>I</option>
-                        <option>J</option>
-                        <option>K</option>
-                        <option>L</option>
-                        <option>M</option>
-                        <option>N</option>
-                        <option>O</option>
-                        <option>P</option>
-                        <option>Q</option>
-                        <option>R</option>
-                        <option>S</option>
-                        <option>T</option>
-                        <option>U</option>
-                        <option>V</option>
-                        <option>W</option>
-                        <option>X</option>
-                        <option>Y</option>
-                        <option>Z</option>
+                        <Option options={letters} selected={this.props.players.names[1]} />
                     </select>
                 </div>
                 <div>
                     <label>Rows</label>
                     <select id="rows">
-                        <option>2</option>
-                        <option selected>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
+                        <Option options={numbers} selected={this.props.board.boardRows} />
                     </select>
                 </div>
                 <div>
                     <label>Cols</label>
                     <select id="cols">
-                        <option>2</option>
-                        <option selected>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
+                        <Option options={numbers} selected={this.props.board.boardCols} />
                     </select>
                 </div>
             </div>
