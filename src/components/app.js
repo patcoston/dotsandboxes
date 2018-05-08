@@ -8,7 +8,6 @@ import {withRouter} from 'react-router';
 // Provides data to presentational components
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         players: {...state.players},
         board: {...state.board},

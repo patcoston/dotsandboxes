@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 
 class Option extends Component {
     render() {
         let opt = this.props.options;
         let opts = [];
         for (let i=0; i<opt.length; i++) {
-            if (opt[i] == this.props.selected) {
+            if (opt[i].toString() === this.props.selected) {
                 opts.push(<option selected>{opt[i]}</option>);
             } else {
                 opts.push(<option>{opt[i]}</option>);

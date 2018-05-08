@@ -5,12 +5,8 @@ import Setup from './setup';
 import Play from './play';
 
 class Main extends Component {
-    constructor() {
-        super();
-    }
 
     render() {
-        //console.log(this.props);
         return (
             <div>
                 <Route exact path="/" render={() => (

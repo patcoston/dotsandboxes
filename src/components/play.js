@@ -12,7 +12,7 @@ class Play extends Component {
                 <label>Scores:</label>
                 <span>{this.props.players.names[0]}:{this.props.players.scores[0]}</span>
                 <span>{this.props.players.names[1]}:{this.props.players.scores[1]}</span>
-                <Table rows={this.props.board.tableRows} cols={this.props.board.tableCols} />
+                <Table rows={this.props.board.tableRows} cols={this.props.board.tableCols} {...this.props} />
             </div>
         )
     }

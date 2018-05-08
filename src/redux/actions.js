@@ -1,5 +1,4 @@
 export function setPlayers(players) {
-    console.log('function setPlayers', players);
     return {
         type: 'SET_PLAYERS',
         players,
@@ -20,18 +19,18 @@ export function removePlayer(player) {
     }
 }
 
-export function addLine(loc) {
-    return {
-        type: 'ADD_LINE',
-        loc,
-    }
-}
-
 export function updateBoardSize(rows, cols) {
-    console.log('updateBoardSize', rows, cols);
     return {
         type: 'UPDATE_BOARD_SIZE',
         rows,
         cols,
+    }
+}
+
+export function updateTableLine(row, col) {
+    return {
+        type: 'UPDATE_TABLE_LINE',
+        row,
+        col
     }
 }

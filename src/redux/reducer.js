@@ -2,7 +2,6 @@ import game from '../data/game';
 import {combineReducers} from 'redux';
 
 function players(state=game.players, action) {
-    console.log('reducer players', state, action);
     switch (action.type) {
         case 'SET_PLAYERS':
             let newState = Object.assign({}, state, {
@@ -18,10 +17,10 @@ function players(state=game.players, action) {
 }
 
 function board(state=game.board, action) {
-    console.log('reducer size', state, action);
+    let newState = {};
     switch (action.type) {
         case 'UPDATE_BOARD_SIZE':
-            let newState = Object.assign({}, state, {
+            newState = Object.assign({}, state, {
                 boardRows: action.rows,
                 boardCols: action.cols,
                 tableRows: action.rows * 2 + 1,
@@ -43,7 +42,10 @@ function board(state=game.board, action) {
                     newState.lines[row][col] = false; // no lines in here in the table
                 }
             }
-            console.log('newState', newState);
+            return newState;
+        case 'UPDATE_TABLE_LINE':
+            newState = Object.assign({}, state);
+            newState.lines[action.row][action.col] = true;
             return newState;
         default: return state;
     }
