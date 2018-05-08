@@ -8,10 +8,10 @@ class Home extends Component {
                 <Link to="/Setup">Setup</Link><br />
                 <Link to="/Play">Play</Link><br />
                 <div>
-                    <label>Players {this.props.player[0]} and  {this.props.player[1]}</label>
+                    <label>Players {this.props.players.names[0]} and  {this.props.players.names[1]}</label>
                 </div>
                 <div>
-                    <label>Board size:</label> {this.props.size.boardRows} x {this.props.size.boardCols}
+                    <label>Board size:</label> {this.props.board.boardRows} x {this.props.board.boardCols}
                 </div>
             </div>
         )

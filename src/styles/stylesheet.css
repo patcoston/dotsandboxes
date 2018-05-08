@@ -3,26 +3,26 @@ table {
 }
 
 td {
-    margin:0;
-    padding:0;
-    width:20px;
-    height:20px;
-    border:1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
     background-color: white;
 }
 
 tr:nth-child(odd) td:nth-child(odd) {
-    background-color:black;
-    border:1px solid black;
-    height:5px;
+    background-color: black;
+    border: 1px solid black;
+    height: 5px;
 }
 
 tr:nth-child(odd) td:nth-child(even) {
-    background-color:#ddd;
-    cursor:crosshair;
+    background-color: #ddd;
+    cursor: crosshair;
 }
 
 tr:nth-child(even) td:nth-child(odd) {
-    background-color:#ddd;
-    cursor:crosshair;
+    background-color: #ddd;
+    cursor: crosshair;
 }
