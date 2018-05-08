@@ -27,6 +27,17 @@ function board(state=game.board, action) {
                 tableRows: action.rows * 2 + 1,
                 tableCols: action.cols * 2 + 1,
             });
+            delete newState.owner; // remove owner array
+            delete newState.lines; // remove lines array
+            newState.owner = []; // create new owner array
+            newState.lines = []; // create new lines array
+            for (let row=0; row<action.rows; row++) {
+                newState.owner[row] = [];
+                for (let col=0; col<action.cols; col++) {
+                    newState.owner[row][col] = -1; // nobody owns this square
+                }
+            }
+            console.log('newState', newState);
             return newState;
         default: return state;
     }
