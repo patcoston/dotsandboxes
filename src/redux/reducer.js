@@ -31,10 +31,16 @@ function board(state=game.board, action) {
             delete newState.lines; // remove lines array
             newState.owner = []; // create new owner array
             newState.lines = []; // create new lines array
-            for (let row=0; row<action.rows; row++) {
+            for (let row=0; row<newState.boardRows; row++) {
                 newState.owner[row] = [];
-                for (let col=0; col<action.cols; col++) {
-                    newState.owner[row][col] = -1; // nobody owns this square
+                for (let col=0; col<newState.boardCols; col++) {
+                    newState.owner[row][col] = false; // no player owns this square
+                }
+            }
+            for (let row=0; row<newState.tableRows; row++) {
+                newState.lines[row] = [];
+                for (let col=0; col<newState.tableCols; col++) {
+                    newState.lines[row][col] = false; // no lines in here in the table
                 }
             }
             console.log('newState', newState);
